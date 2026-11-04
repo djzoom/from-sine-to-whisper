@@ -1,6 +1,7 @@
 """Static checks for the English lessons. Exit code 0 = all good.
 
-    python scripts/check_lessons.py
+    python scripts/check_lessons.py                     # whole repo
+    python scripts/check_lessons.py notebooks/x/L11_*.ipynb   # just these lessons
 
 Checks every notebook under notebooks/:
   1. valid JSON / nbformat
@@ -31,7 +32,8 @@ def _src(cell: dict) -> str:
 
 def main() -> int:
     problems: list[str] = []
-    notebooks = sorted(NB.rglob("L*.ipynb"))
+    only = [Path(a).resolve() for a in sys.argv[1:]]
+    notebooks = only or sorted(NB.rglob("L*.ipynb"))
     for path in notebooks:
         rel = path.relative_to(ROOT)
         try:
@@ -65,7 +67,12 @@ def main() -> int:
                     if not (path.parent / target).resolve().exists():
                         problems.append(f"{rel} cell {i}: broken link {target}")
 
-    for path in sorted(NB.rglob("*.md")) + sorted(NB.rglob("*.py")):
+    extra = (
+        [p.parent / "solutions" / f"{p.stem}_solutions.md" for p in only]
+        if only
+        else sorted(NB.rglob("*.md")) + sorted(NB.rglob("*.py"))
+    )
+    for path in [p for p in extra if p.exists()]:
         text = path.read_text(encoding="utf-8")
         if CJK.search(text):
             problems.append(f"{path.relative_to(ROOT)}: contains Chinese characters")

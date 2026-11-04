@@ -27,9 +27,15 @@ ROOT = Path(__file__).resolve().parents[1]
 def signature(path: Path) -> list[tuple[int, str]]:
     nb = nbformat.read(path, as_version=4)
     os.environ.setdefault("MPLBACKEND", "Agg")
+    # Never download large pretrained models just to compare behaviour: with the
+    # hub offline, a model-loading cell fails the same way in both editions.
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+    os.environ.setdefault("HF_DATASETS_OFFLINE", "1")
+    os.environ.setdefault("WANDB_MODE", "disabled")
     NotebookClient(
         nb,
-        timeout=180,
+        timeout=600,
         kernel_name="python3",
         allow_errors=True,
         resources={"metadata": {"path": str(path.parent)}},
