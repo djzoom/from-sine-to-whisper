@@ -45,6 +45,16 @@ first, peek later.
 Lessons marked 🎨 are visual lessons: no coding task; you build intuition by
 turning one knob at a time and watching the plots.
 
+## Companions: a game and a video library
+
+- **[Aurora Quest](https://djzoom.github.io/from-sine-to-whisper/)** — a small 8-bit quiz
+  game that walks through the course chapter by chapter. Answer questions, beat the boss,
+  collect loot; progress is saved in your browser.
+- **[Video library](https://djzoom.github.io/from-sine-to-whisper/video-library.html)** —
+  83 English-language lectures and courses (3Blue1Brown, Karpathy, MIT, Stanford, CMU …),
+  each mapped to the lessons it supports, with a watched-list you can tick off. The source
+  is [`docs/VIDEO_LIBRARY.md`](docs/VIDEO_LIBRARY.md).
+
 ## The course (L01 → L99)
 
 ### 🏁 Phase 0 · Foundations  `0_foundation/`  L01–L03
@@ -196,8 +206,8 @@ turning one knob at a time and watching the plots.
 | [L93](notebooks/10_integration/L93_mlops.ipynb) | MLOps basics — experiment tracking with W&B, model versioning, Docker packaging and deployment scripts |
 | [L94](notebooks/10_integration/L94_demo.ipynb) | Aurora v1 demo — every capability in one showcase; assembling the evidence |
 | [L95](notebooks/10_integration/L95_research_papers.ipynb) | Reading research papers — the three-pass method, paper structure, submission and collaboration |
-| [L96](notebooks/10_integration/L96_whiteboard.ipynb) | Whiteboard practice — deriving the DFT / FFT / attention out loud |
-| [L97](notebooks/10_integration/L97_interview.ipynb) | Presenting your work — a 30-second summary, the GitHub evidence chain, mapping skills to a CV |
+| [L96](notebooks/10_integration/L96_whiteboard.ipynb) | Whiteboard practice — deriving the FFT / CTC / attention out loud |
+| [L97](notebooks/10_integration/L97_interview.ipynb) | Presenting your work — the golden structure, 30-second / 3-minute versions, common follow-up questions |
 | [L98](notebooks/10_integration/L98_retrospective.ipynb) | Retrospective — six months of milestones, what worked, measuring the learning curve |
 | [L99](notebooks/10_integration/L99_next_steps.ipynb) | What next — research directions, open-source contribution, the next milestone |
 

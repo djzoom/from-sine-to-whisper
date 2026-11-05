@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Aurora Quest is the 8-bit companion RPG to From a Sine Wave to Whisper: defeat seven black-box bosses and turn the course into an adventure."
+    />
+    <meta name="theme-color" content="#08111f" />
+    <title>Aurora Quest | The course RPG</title>
+    <link rel="stylesheet" href="./styles.css?v=20261105-en" />
+  </head>
+  <body data-tab="battle">
+    <div class="page-shell">
+      <!-- Top status bar: the pixel-game HUD -->
+      <header class="topbar pixel-panel">
+        <span class="logo">AURORA&nbsp;QUEST</span>
+        <div class="topbar-stats">
+          <span class="stat">Lv<strong id="player-level">1</strong></span>
+          <!-- Decorative only: the XP number next to it is what assistive tech reads -->
+          <div class="xp-meter" aria-hidden="true">
+            <div class="xp-meter-fill" id="xp-fill"></div>
+          </div>
+          <span class="stat">XP<strong id="player-xp">0</strong></span>
+          <span class="stat">Streak<strong id="player-streak">0</strong></span>
+          <span class="stat">Cleared<strong id="player-clear">0/7</strong></span>
+        </div>
+        <div class="topbar-actions">
+          <button class="pixel-btn primary" id="start-button" type="button">Start</button>
+          <button class="pixel-btn" id="resume-button" type="button">Continue</button>
+          <button class="pixel-btn ghost" id="reset-button" type="button">Reset</button>
+          <button class="pixel-btn ghost" id="mute-button" type="button" aria-pressed="true">Sound: on</button>
+        </div>
+      </header>
+
+      <!-- Battle screen -->
+      <main class="battle pixel-panel">
+        <div class="battle-head">
+          <h1 id="stage-title">Prologue: Welcome to Aurora Quest</h1>
+        </div>
+
+        <div class="boss-zone" id="boss-zone">
+          <div class="fx-layer" id="fx-layer" aria-hidden="true"></div>
+          <canvas id="boss-canvas" width="16" height="16" aria-hidden="true"></canvas>
+          <div class="boss-meta">
+            <span class="boss-name" id="boss-name">Black-Box Gatekeeper</span>
+            <div class="hp-bar" id="boss-hp" role="img" aria-label="Boss HP"></div>
+          </div>
+        </div>
+
+        <div class="dialogue" id="stage-narrative"></div>
+
+        <div class="question">
+          <div class="question-meta">
+            <span id="question-count">Question 1 / 3</span>
+            <span class="hint-pill" id="question-hint-pill">Think first, then strike</span>
+          </div>
+          <h2 id="question-prompt">The question will appear here.</h2>
+          <div class="choices" id="choice-list"></div>
+        </div>
+
+        <div class="log-strip">
+          <div id="battle-log-list" class="log-list" aria-live="polite"></div>
+          <button class="pixel-btn primary" id="next-button" type="button" disabled>Next chapter</button>
+        </div>
+        <p class="source-note" id="phase-source"></p>
+      </main>
+
+      <!-- Bottom: course guide + loot -->
+      <section class="belt">
+        <div class="pixel-panel map-panel">
+          <div class="map-head">
+            <h2 class="panel-title">Course guide</h2>
+          </div>
+          <div class="map-viewport">
+            <div id="roadmap-list" class="course-outline"></div>
+          </div>
+          <p class="map-caption" id="map-caption"></p>
+        </div>
+        <div class="pixel-panel loot-panel">
+          <h2 class="panel-title">Loot</h2>
+          <div id="inventory-list" class="loot-grid"></div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          The course guide follows the course table; the game stands on its own. Keyboard: <kbd>1–4</kbd> answer · <kbd>Enter</kbd> next chapter · <kbd>M</kbd> mute.
+        </p>
+        <p>
+          Course links: <a href="https://github.com/djzoom/from-sine-to-whisper#getting-started" target="_blank" rel="noopener">Getting started</a> ·
+          <a href="https://github.com/djzoom/from-sine-to-whisper/tree/main/notebooks" target="_blank" rel="noopener">All 99 lessons</a> ·
+          <a href="./video-library.html">Video library</a> ·
+          <a href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="#" class="share-action" id="share-link">Share this page</a>
+        </p>
+      </footer>
+
+      <!-- "About" page: its own screen as a mobile tab; hidden on desktop (the footer carries the same links there) -->
+      <section class="more-panel pixel-panel" aria-label="About and links">
+        <h2 class="panel-title">About the course</h2>
+        <p class="more-blurb">
+          From a Sine Wave to Whisper is a 99-lesson route from mathematical intuition and audio DSP
+          through deep learning to shipping a working system. The goal isn't "knowing which library to
+          call" — it's being able to explain the formula, write the core algorithm yourself, and turn the
+          result into something real.
+        </p>
+        <p class="more-blurb">
+          The first half fills in complex numbers, linear algebra, calculus, probability and audio
+          features; the second half moves on to ASR, music understanding, LLMs and RAG, and MLOps. Every
+          phase has a concrete deliverable, and it all comes together as an Aurora system you can show,
+          talk through in an interview, and keep researching with.
+        </p>
+        <p class="more-blurb">
+          How long does it take? A Monte Carlo simulation over the time each of the 99 lessons takes puts
+          the whole course at about 131 hours — around 6 months at 5 hours a week. Sprint and it's 2–3
+          months; dip in and out and a year works too. It's not a race: finishing matters more than
+          finishing fast.
+        </p>
+        <p class="more-blurb">
+          Wherever it can, the course lands each idea in code you can run, a plot you can explain and an
+          experiment you can retrace. What you're left with isn't just notes but an engineering base you
+          can grow into a voice assistant, a retrieval system or an audio research prototype.
+        </p>
+        <a class="more-author" href="https://0xgarfield.com" target="_blank" rel="noopener" aria-label="Visit Garfield Wang's website">
+          <span class="more-avatar" aria-hidden="true">GF</span>
+          <div class="more-author-body">
+            <strong>Garfield Wang</strong>
+            <small>Speech &amp; Audio ML · Building AURORA</small>
+          </div>
+        </a>
+        <div class="more-links">
+          <a class="pixel-btn" href="https://github.com/djzoom/from-sine-to-whisper#getting-started" target="_blank" rel="noopener">Getting started</a>
+          <a class="pixel-btn" href="https://github.com/djzoom/from-sine-to-whisper/tree/main/notebooks" target="_blank" rel="noopener">All 99 lessons</a>
+          <a class="pixel-btn" href="./video-library.html">Video library</a>
+          <a class="pixel-btn" href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener">GitHub</a>
+          <button class="pixel-btn primary share-action" type="button">Share this page</button>
+        </div>
+      </section>
+
+      <!-- Mobile tabs (hidden on desktop): the battle gets its own screen, the secondary content is paged -->
+      <nav class="mobile-tabs pixel-panel" aria-label="Page sections">
+        <button class="tab-btn active" data-tab-target="battle" type="button">⚔️<span>Battle</span></button>
+        <button class="tab-btn" data-tab-target="map" type="button">📚<span>Course</span></button>
+        <button class="tab-btn" data-tab-target="loot" type="button">🎒<span>Loot</span></button>
+        <button class="tab-btn" data-tab-target="more" type="button">🔗<span>About</span></button>
+      </nav>
+    </div>
+
+    <script>
+      // Mobile tab paging: only writes body[data-tab]; CSS does all the showing and hiding (no effect on desktop).
+      document.querySelector(".mobile-tabs").addEventListener("click", (event) => {
+        const btn = event.target.closest(".tab-btn");
+        if (!btn) return;
+        document.body.dataset.tab = btn.dataset.tabTarget;
+        for (const other of document.querySelectorAll(".mobile-tabs .tab-btn")) {
+          other.classList.toggle("active", other === btn);
+        }
+      });
+
+      // Share (shared by the footer link and the "About" button): use the system share sheet if there is one,
+      // otherwise copy the link and confirm in place.
+      for (const trigger of document.querySelectorAll(".share-action")) {
+        trigger.addEventListener("click", async (event) => {
+          event.preventDefault();
+          const link = event.currentTarget;
+          const data = {
+            title: document.title,
+            text: "Aurora Quest: a 99-lesson audio-AI course, played as an 8-bit adventure.",
+            url: location.href,
+          };
+          try {
+            if (navigator.share) {
+              await navigator.share(data);
+              return;
+            }
+            await navigator.clipboard.writeText(data.url);
+            const original = link.textContent;
+            link.textContent = "✓ Link copied";
+            setTimeout(() => (link.textContent = original), 2000);
+          } catch {
+            /* the user cancelled the share sheet, etc. — stay quiet */
+          }
+        });
+      }
+    </script>
+    <script type="module" src="./src/app.js?v=20261105-en"></script>
+  </body>
+</html>
