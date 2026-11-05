@@ -13,7 +13,7 @@ The whole course is free and open source under the MIT license — no paywall, n
 "first lesson free", nothing to sign up for. It is meant as a public good: learn
 from it, fork it, teach with it, build on it.
 
-> **Status.** Lessons **L01–L10** are available in English. The rest are being
+> **Status.** 10 of 99 lessons are available in English. The rest are being
 > translated from the [Chinese original](https://github.com/djzoom/AURORA); until
 > then each lesson below links to its Chinese version.
 
