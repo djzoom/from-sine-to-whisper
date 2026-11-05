@@ -66,4 +66,5 @@ Key points:
 
 - In `MLP.__init__`, only the last layer has `nonlin=False` (a linear output that doesn't clip the regression value / logit).
 - Total parameters of `MLP(3, [4, 4, 1])` = 4×(3+1) + 4×(4+1) + 1×(4+1) = 16 + 20 + 5 = **41**.
+- Whiteboard Question 5 (nodes in the computation graph): after one forward pass on `[Value(1.0), Value(2.0), Value(3.0)]`, walking back from the output along `_prev` reaches **134** `Value`s. With `Neuron.__call__` written as above, a Neuron with nin inputs owns nin+1 parameters + nin multiplications + 1 `Value(0.0)` + nin+1 additions (+ 1 tanh in a hidden layer) = 3·nin+3 (+1) nodes: L0 4×13=52, L1 4×16=64, L2 1×15=15, plus the 3 inputs = 134. If the inputs are plain floats instead of `Value`s, every multiplication in the first layer wraps a fresh `Value`, and the total becomes 143.
 - `parameters()` flattens layer by layer; during training, run `p.data -= lr * p.grad` on every `Value`, then zero it with `p.grad = 0.0`.
