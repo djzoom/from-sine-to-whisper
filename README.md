@@ -13,7 +13,7 @@ The whole course is free and open source under the MIT license — no paywall, n
 "first lesson free", nothing to sign up for. It is meant as a public good: learn
 from it, fork it, teach with it, build on it.
 
-> **Status.** 10 of 99 lessons are available in English. The rest are being
+> **Status.** 31 of 99 lessons are available in English. The rest are being
 > translated from the [Chinese original](https://github.com/djzoom/AURORA); until
 > then each lesson below links to its Chinese version.
 
@@ -73,37 +73,37 @@ turning one knob at a time and watching the plots.
 |---|---|
 | [L09](notebooks/2_linear_algebra/L09_vectors.ipynb) | Vector algebra — addition, scalar multiplication and linear combinations, in NumPy and geometrically |
 | [L10](notebooks/2_linear_algebra/L10_dot_product.ipynb) | Dot products and projection — a·b = \|a\|\|b\| cos θ, and why similarity = dot product ÷ norms |
-| L11 | Vector norms — L1 / L2 / ∞: computation, geometry and what they mean for regularization *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L11_norms.ipynb))* |
-| L12 | Matrix multiplication — a matrix is a linear map, multiplication is composition; a 2×2 worked by hand *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L12_matrices.ipynb))* |
-| L13 | Special matrices — orthogonal matrices preserve length, symmetric = mirror, testing positive-definiteness *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L13_special_matrices.ipynb))* |
-| L14 | Eigenvalues and SVD — the geometry of Ax = λx; SVD as the universal decomposition *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L14_eigen_svd.ipynb))* |
-| L15 | Gaussian elimination — solving Ax = b, row-echelon form, when solutions exist *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L15_linear_systems.ipynb))* |
-| L16 | Determinants and inverses — det(A) as area scaling; inverting, and when you can't *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L16_determinant_inverse.ipynb))* |
-| L17 | Eigendecomposition A = PDP⁻¹ — changing basis turns a matrix product into scalar multiplication *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L17_eigen_diagonalization.ipynb))* |
-| L18 | Invertibility and rank — rank = information, null space = the directions that get crushed, diagnosing singular matrices *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L18_invertibility.ipynb))* |
-| L19 🎨 | Matrix transformations illustrated — rotation, scaling and shear, animated *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L19_visual_multiply.ipynb))* |
-| L20 🎨 | A map of decompositions — LU / QR / SVD compared geometrically *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L20_visual_factorizations.ipynb))* |
-| L21 🎨 | Matrices as filters — the DFT matrix and the mel matrix: audio processing is matrix multiplication *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/2_linear_algebra/L21_aurora_matrices.ipynb))* |
+| [L11](notebooks/2_linear_algebra/L11_norms.ipynb) | Vector norms — L1 / L2 / ∞: computation, geometry and what they mean for regularization |
+| [L12](notebooks/2_linear_algebra/L12_matrices.ipynb) | Matrix multiplication — a matrix is a linear map, multiplication is composition; a 2×2 worked by hand |
+| [L13](notebooks/2_linear_algebra/L13_special_matrices.ipynb) | Special matrices — orthogonal matrices preserve length, symmetric = mirror, testing positive-definiteness |
+| [L14](notebooks/2_linear_algebra/L14_eigen_svd.ipynb) | Eigenvalues and SVD — the geometry of Ax = λx; SVD as the universal decomposition |
+| [L15](notebooks/2_linear_algebra/L15_linear_systems.ipynb) | Gaussian elimination — solving Ax = b, row-echelon form, when solutions exist |
+| [L16](notebooks/2_linear_algebra/L16_determinant_inverse.ipynb) | Determinants and inverses — det(A) as area scaling; inverting, and when you can't |
+| [L17](notebooks/2_linear_algebra/L17_eigen_diagonalization.ipynb) | Eigendecomposition A = PDP⁻¹ — changing basis turns a matrix product into scalar multiplication |
+| [L18](notebooks/2_linear_algebra/L18_invertibility.ipynb) | Invertibility and rank — rank = information, null space = the directions that get crushed, diagnosing singular matrices |
+| [L19](notebooks/2_linear_algebra/L19_visual_multiply.ipynb) 🎨 | Matrix transformations illustrated — rotation, scaling and shear, animated |
+| [L20](notebooks/2_linear_algebra/L20_visual_factorizations.ipynb) 🎨 | A map of decompositions — LU / QR / SVD compared geometrically |
+| [L21](notebooks/2_linear_algebra/L21_aurora_matrices.ipynb) 🎨 | Matrices as filters — the DFT matrix and the mel matrix: audio processing is matrix multiplication |
 
 ### ∂ Phase 3 · Calculus  `3_calculus/`  L22–L26
 
 | # | Lesson |
 |---|---|
-| L22 | Derivatives — tangent slope, the limit definition, numerical vs analytical differentiation *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/3_calculus/L22_derivatives.ipynb))* |
-| L23 | Gradients — the direction of steepest ascent; partial derivatives and the gradient vector *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/3_calculus/L23_gradients.ipynb))* |
-| L24 | The chain rule — differentiating nested functions, the maths behind backpropagation *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/3_calculus/L24_chain_rule.ipynb))* |
-| L25 | Gradient descent — fitting a line to data, from loss function to weight-update rule *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/3_calculus/L25_gradient_descent.ipynb))* |
-| L26 🎨 | Calculus visualized — tangents, contour lines and gradient-descent trajectories *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/3_calculus/L26_visual_calculus.ipynb))* |
+| [L22](notebooks/3_calculus/L22_derivatives.ipynb) | Derivatives — tangent slope, the limit definition, numerical vs analytical differentiation |
+| [L23](notebooks/3_calculus/L23_gradients.ipynb) | Gradients — the direction of steepest ascent; partial derivatives and the gradient vector |
+| [L24](notebooks/3_calculus/L24_chain_rule.ipynb) | The chain rule — differentiating nested functions, the maths behind backpropagation |
+| [L25](notebooks/3_calculus/L25_gradient_descent.ipynb) | Gradient descent — fitting a line to data, from loss function to weight-update rule |
+| [L26](notebooks/3_calculus/L26_visual_calculus.ipynb) 🎨 | Calculus visualized — tangents, contour lines and gradient-descent trajectories |
 
 ### 🎲 Phase 4 · Probability & statistics  `4_probability/`  L27–L31
 
 | # | Lesson |
 |---|---|
-| L27 | Probability basics — events, conditional probability, independence and the law of large numbers *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/4_probability/L27_probability_basics.ipynb))* |
-| L28 | Mean, variance, standardization — descriptive statistics, z-scores and comparing distributions *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/4_probability/L28_descriptive_stats.ipynb))* |
-| L29 | Common distributions — uniform, Gaussian, Bernoulli: PDF / CDF and sampling *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/4_probability/L29_distributions.ipynb))* |
-| L30 | Softmax and cross-entropy — the output layer and loss of a classifier, gradient derived by hand *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/4_probability/L30_softmax_crossentropy.ipynb))* |
-| L31 🎨 | Distributions visualized — PDF, CDF and the cross-entropy loss surface *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/4_probability/L31_visual_probability.ipynb))* |
+| [L27](notebooks/4_probability/L27_probability_basics.ipynb) | Probability basics — events, conditional probability, independence and the law of large numbers |
+| [L28](notebooks/4_probability/L28_descriptive_stats.ipynb) | Mean, variance, standardization — descriptive statistics, z-scores and comparing distributions |
+| [L29](notebooks/4_probability/L29_distributions.ipynb) | Common distributions — uniform, Gaussian, Bernoulli: PDF / CDF and sampling |
+| [L30](notebooks/4_probability/L30_softmax_crossentropy.ipynb) | Softmax and cross-entropy — the output layer and loss of a classifier, gradient derived by hand |
+| [L31](notebooks/4_probability/L31_visual_probability.ipynb) 🎨 | Distributions visualized — PDF, CDF and the cross-entropy loss surface |
 
 ### 🔊 Phase 5 · Audio DSP  `5_audio_dsp/`  L32–L53
 
