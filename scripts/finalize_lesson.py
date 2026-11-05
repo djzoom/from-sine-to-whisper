@@ -1,6 +1,7 @@
 """Finalize a translated lesson for this repository.
 
     python scripts/finalize_lesson.py notebooks/<phase>/LNN_<name>.ipynb [...]
+    python scripts/finalize_lesson.py notebooks/<phase>/solutions/LNN_<name>_solutions.md
 
 Run after a lesson has been translated. It makes the mechanical changes that
 every lesson needs, so translators don't do them by hand:
@@ -59,7 +60,23 @@ def _fix_link(nb_path: Path, m: re.Match) -> str:
     return f"{text}({AURORA}{rel}{anchor})"
 
 
+def _fix_markdown(path: Path, s: str) -> str:
+    s = LINK.sub(lambda m: _fix_link(path, m), s)
+    # "(Chinese)" marks a link into AURORA; keep the marker in step with the link.
+    s = re.sub(r"(\]\((?!https?://)[^)\s]+\))\s*\*\(Chinese\)\*", r"\1", s)
+    s = re.sub(
+        rf"(\]\({re.escape(AURORA)}notebooks/[^)\s]+\.ipynb[^)\s]*\))(?!\s*\*\(Chinese\)\*)",
+        r"\1 *(Chinese)*",
+        s,
+    )
+    return s
+
+
 def finalize(path: Path) -> None:
+    if path.suffix == ".md":  # answer keys: links only
+        path.write_text(_fix_markdown(path, path.read_text(encoding="utf-8")), encoding="utf-8")
+        print(f"finalized {path.relative_to(ROOT)}")
+        return
     nb = json.loads(path.read_text(encoding="utf-8"))
     nb.get("metadata", {}).pop("aurora_translation", None)
     phase = path.parent.name
@@ -67,14 +84,7 @@ def finalize(path: Path) -> None:
         src = cell["source"]
         s = "".join(src) if isinstance(src, list) else src
         if cell["cell_type"] == "markdown":
-            s = LINK.sub(lambda m: _fix_link(path, m), s)
-            # "(Chinese)" marks a link into AURORA; keep the marker in step with the link.
-            s = re.sub(r"(\]\((?!https?://)[^)\s]+\))\s*\*\(Chinese\)\*", r"\1", s)
-            s = re.sub(
-                rf"(\]\({re.escape(AURORA)}notebooks/[^)\s]+\.ipynb[^)\s]*\))(?!\s*\*\(Chinese\)\*)",
-                r"\1 *(Chinese)*",
-                s,
-            )
+            s = _fix_markdown(path, s)
         else:
             for pat, repl in IMPORTS:
                 mod = repl.split()[1]
