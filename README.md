@@ -13,9 +13,7 @@ The whole course is free and open source under the MIT license — no paywall, n
 "first lesson free", nothing to sign up for. It is meant as a public good: learn
 from it, fork it, teach with it, build on it.
 
-> **Status.** 75 of 99 lessons are available in English. The rest are being
-> translated from the [Chinese original](https://github.com/djzoom/AURORA); until
-> then each lesson below links to its Chinese version.
+> **Status.** All 99 lessons are available in English.
 
 ## Getting started
 
@@ -168,40 +166,40 @@ turning one knob at a time and watching the plots.
 
 | # | Lesson |
 |---|---|
-| L76 | Music theory crash course — pitch, intervals, the chroma wheel and equal temperament *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/8_music/L76_music_theory.ipynb))* |
-| L77 | Music features — chroma, RMS energy, zero-crossing rate, implemented in `aurora.music` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/8_music/L77_music_features.ipynb))* |
-| L78 | Beat tracking from scratch — onset envelope, autocorrelation and tempo (BPM) estimation *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/8_music/L78_beat_tracking.ipynb))* |
-| L79 | Music embeddings — contrastive learning: pull similar styles together, push genres apart *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/8_music/L79_music_embed.ipynb))* |
-| L80 | Vector similarity search — cosine vs dot product vs L2, a pure-NumPy k-NN *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/8_music/L80_similarity.ipynb))* |
-| L81 | A music recommender — user taste → embeddings → nearest neighbours → a playlist *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/8_music/L81_recommendation.ipynb))* |
-| L82 🎨 | Music features visualized — chromagrams, beat grids, similarity heatmaps *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/8_music/L82_visual_music.ipynb))* |
+| [L76](notebooks/8_music/L76_music_theory.ipynb) | Music theory crash course — pitch, intervals, the chroma wheel and equal temperament |
+| [L77](notebooks/8_music/L77_music_features.ipynb) | Music features — chroma, RMS energy, zero-crossing rate, implemented in `aurora.music` |
+| [L78](notebooks/8_music/L78_beat_tracking.ipynb) | Beat tracking from scratch — onset envelope, autocorrelation and tempo (BPM) estimation |
+| [L79](notebooks/8_music/L79_music_embed.ipynb) | Music embeddings — contrastive learning: pull similar styles together, push genres apart |
+| [L80](notebooks/8_music/L80_similarity.ipynb) | Vector similarity search — cosine vs dot product vs L2, a pure-NumPy k-NN |
+| [L81](notebooks/8_music/L81_recommendation.ipynb) | A music recommender — user taste → embeddings → nearest neighbours → a playlist |
+| [L82](notebooks/8_music/L82_visual_music.ipynb) 🎨 | Music features visualized — chromagrams, beat grids, similarity heatmaps |
 
 ### 💬 Phase 9 · LLMs & retrieval  `9_llm/`  L83–L91
 
 | # | Lesson |
 |---|---|
-| L83 | A Transformer from scratch — multi-head attention + positional encoding + feed-forward *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L83_transformer.ipynb))* |
-| L84 | LoRA — W = W₀ + BA: fine-tuning a GPT-style model with 0.1 % of the parameters *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L84_lora.ipynb))* |
-| L85 | A KV cache from scratch — updating the key/value cache, O(seq²) → O(seq) per step *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L85_kv_cache.ipynb))* |
-| L86 | Sampling strategies from scratch — temperature / top-k / top-p in pure NumPy *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L86_sampling.ipynb))* |
-| L87 | Quantization and local inference — how INT8 quantization works; lightweight inference with Hugging Face *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L87_local_inference.ipynb))* |
-| L88 | TF-IDF retrieval from scratch — term frequency × inverse document frequency, vector search in NumPy *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L88_tfidf_retrieval.ipynb))* |
-| L89 | A complete RAG pipeline — chunking + TF-IDF retrieval + prompt construction + generation *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L89_rag_pipeline.ipynb))* |
-| L90 | Conversational RAG and a tool-using agent (ReAct) — session memory, source attribution, Thought/Action/Observation *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L90_agent.ipynb))* |
-| L91 🎨 | Attention illustrated — multi-head attention heatmaps, the low-rank structure of LoRA *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/9_llm/L91_visual_llm.ipynb))* |
+| [L83](notebooks/9_llm/L83_transformer.ipynb) | A Transformer from scratch — multi-head attention + positional encoding + feed-forward |
+| [L84](notebooks/9_llm/L84_lora.ipynb) | LoRA — W = W₀ + BA: fine-tuning a GPT-style model with 0.1 % of the parameters |
+| [L85](notebooks/9_llm/L85_kv_cache.ipynb) | A KV cache from scratch — updating the key/value cache, O(seq²) → O(seq) per step |
+| [L86](notebooks/9_llm/L86_sampling.ipynb) | Sampling strategies from scratch — temperature / top-k / top-p in pure NumPy |
+| [L87](notebooks/9_llm/L87_local_inference.ipynb) | Quantization and local inference — how INT8 quantization works; lightweight inference with Hugging Face |
+| [L88](notebooks/9_llm/L88_tfidf_retrieval.ipynb) | TF-IDF retrieval from scratch — term frequency × inverse document frequency, vector search in NumPy |
+| [L89](notebooks/9_llm/L89_rag_pipeline.ipynb) | A complete RAG pipeline — chunking + TF-IDF retrieval + prompt construction + generation |
+| [L90](notebooks/9_llm/L90_agent.ipynb) | Conversational RAG and a tool-using agent (ReAct) — session memory, source attribution, Thought/Action/Observation |
+| [L91](notebooks/9_llm/L91_visual_llm.ipynb) 🎨 | Attention illustrated — attention heatmaps, the low-rank structure of LoRA |
 
 ### 🚀 Phase 10 · Integration  `10_integration/`  L92–L99
 
 | # | Lesson |
 |---|---|
-| L92 | The end-to-end pipeline — microphone → ASR → LLM → text answer, assembled *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L92_pipeline.ipynb))* |
-| L93 | MLOps basics — experiment tracking with W&B, model versioning, Docker packaging and deployment scripts *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L93_mlops.ipynb))* |
-| L94 | Aurora v1 demo — every capability in one showcase; assembling the evidence *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L94_demo.ipynb))* |
-| L95 | Reading research papers — the three-pass method, paper structure, submission and collaboration *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L95_research_papers.ipynb))* |
-| L96 | Whiteboard practice — deriving the DFT / FFT / attention out loud *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L96_whiteboard.ipynb))* |
-| L97 | Presenting your work — a 30-second summary, the GitHub evidence chain, mapping skills to a CV *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L97_interview.ipynb))* |
-| L98 | Retrospective — six months of milestones, what worked, measuring the learning curve *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L98_retrospective.ipynb))* |
-| L99 | What next — research directions, open-source contribution, the next milestone *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/10_integration/L99_next_steps.ipynb))* |
+| [L92](notebooks/10_integration/L92_pipeline.ipynb) | The end-to-end pipeline — microphone → ASR → LLM → text answer, assembled |
+| [L93](notebooks/10_integration/L93_mlops.ipynb) | MLOps basics — experiment tracking with W&B, model versioning, Docker packaging and deployment scripts |
+| [L94](notebooks/10_integration/L94_demo.ipynb) | Aurora v1 demo — every capability in one showcase; assembling the evidence |
+| [L95](notebooks/10_integration/L95_research_papers.ipynb) | Reading research papers — the three-pass method, paper structure, submission and collaboration |
+| [L96](notebooks/10_integration/L96_whiteboard.ipynb) | Whiteboard practice — deriving the DFT / FFT / attention out loud |
+| [L97](notebooks/10_integration/L97_interview.ipynb) | Presenting your work — a 30-second summary, the GitHub evidence chain, mapping skills to a CV |
+| [L98](notebooks/10_integration/L98_retrospective.ipynb) | Retrospective — six months of milestones, what worked, measuring the learning curve |
+| [L99](notebooks/10_integration/L99_next_steps.ipynb) | What next — research directions, open-source contribution, the next milestone |
 
 ---
 
