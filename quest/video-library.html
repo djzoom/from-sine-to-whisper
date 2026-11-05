@@ -9,6 +9,29 @@
     />
     <meta name="theme-color" content="#08111f" />
     <title>Video Library | From a Sine Wave to Whisper</title>
+    <link rel="canonical" href="https://djzoom.github.io/from-sine-to-whisper/video-library.html" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%23060b18'/%3E%3Cg fill='%2366e8ff'%3E%3Crect x='0' y='8' width='1' height='2'/%3E%3Crect x='1' y='6' width='1' height='2'/%3E%3Crect x='2' y='4' width='1' height='2'/%3E%3Crect x='3' y='3' width='1' height='2'/%3E%3Crect x='4' y='4' width='1' height='2'/%3E%3Crect x='5' y='6' width='1' height='2'/%3E%3Crect x='6' y='8' width='1' height='2'/%3E%3Crect x='7' y='10' width='1' height='2'/%3E%3Crect x='8' y='12' width='1' height='2'/%3E%3Crect x='9' y='13' width='1' height='2'/%3E%3Crect x='10' y='12' width='1' height='2'/%3E%3Crect x='11' y='10' width='1' height='2'/%3E%3Crect x='12' y='8' width='1' height='2'/%3E%3Crect x='13' y='6' width='1' height='2'/%3E%3Crect x='14' y='4' width='1' height='2'/%3E%3Crect x='15' y='3' width='1' height='2'/%3E%3C/g%3E%3Crect x='13' y='1' width='2' height='2' fill='%23ffc85e'/%3E%3C/svg%3E" />
+    <!-- Social preview cards (absolute URLs: crawlers don't resolve relative ones) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="From a Sine Wave to Whisper" />
+    <meta property="og:title" content="Video Library: 83 lectures mapped to a free audio-AI course" />
+    <meta
+      property="og:description"
+      content="3Blue1Brown, Karpathy, MIT, Stanford, CMU and more, each tied to the lesson it supports in From a Sine Wave to Whisper. Tick off what you've watched."
+    />
+    <meta property="og:url" content="https://djzoom.github.io/from-sine-to-whisper/video-library.html" />
+    <meta property="og:image" content="https://djzoom.github.io/from-sine-to-whisper/og/videos.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Video Library: a pixel grid of 83 lectures next to the course title and the repository URL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Video Library: 83 lectures mapped to a free audio-AI course" />
+    <meta
+      name="twitter:description"
+      content="3Blue1Brown, Karpathy, MIT, Stanford, CMU and more, each tied to the lesson it supports in From a Sine Wave to Whisper. Tick off what you've watched."
+    />
+    <meta name="twitter:image" content="https://djzoom.github.io/from-sine-to-whisper/og/videos.png" />
+    <link rel="stylesheet" href="./growth.css?v=20261105-en" />
     <style>
       /* Same design language as the Quest: deep-space CRT + neon palette, hard
          corners + pixel borders. Self-contained (does not load styles.css) so the
@@ -296,6 +319,9 @@
 
       .footer { margin-top: 34px; text-align: center; color: var(--muted); font-size: 0.76rem; font-family: var(--mono); line-height: 1.8; }
       .footer a { color: var(--cyan); }
+      .footer-growth { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px; margin-top: 12px; }
+      .footer-growth-note { font-size: 0.72rem; }
+      .hud-actions { display: inline-flex; flex-wrap: wrap; gap: 6px; }
       kbd {
         font-family: var(--mono);
         border: 1px solid var(--line);
@@ -325,7 +351,8 @@
             rel="noopener"
             >Source (Markdown)</a
           >
-          <button class="pixel-btn" id="share-button" type="button">🔗 Share</button>
+          <button class="pixel-btn" id="share-button" type="button" data-share-page>🔗 Share</button>
+          <a class="pixel-btn gr-star" data-star-button href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener" aria-label="Star the course repository on GitHub"><span aria-hidden="true">⭐</span> Star<span class="gr-star-long"> on GitHub</span> <span class="gr-star-count" data-star-count hidden></span></a>
         </nav>
       </header>
 
@@ -347,6 +374,7 @@
         <span class="stat">Phases cleared <strong id="hud-phases">0</strong><span id="hud-phase-total">/0</span></span>
         <span class="medals" id="hud-medals" title="Milestones: 10 🥉 · 25 🥈 · 50 🥇 · 75 💎 · all 👑"></span>
         <span class="hud-actions">
+          <button class="pixel-btn" id="save-card" type="button" title="Download your progress as a 1080x1350 PNG">📸 Save progress card</button>
           <button class="pixel-btn" id="clear-watched" type="button">Clear checklist</button>
         </span>
         <p class="hud-hint" id="hud-hint" aria-live="polite"></p>
@@ -409,6 +437,11 @@
           English. ⚠️ = a single-video link that was not individually confirmed; go by the channel +
           search terms. Your checklist is stored only in this browser.
         </p>
+        <p class="footer-growth">
+          <a class="pixel-btn gr-star" data-star-button href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener" aria-label="Star the course repository on GitHub"><span aria-hidden="true">⭐</span> Star on GitHub <span class="gr-star-count" data-star-count hidden></span></a>
+          <button class="pixel-btn" type="button" data-share-page>🔗 Share this page</button>
+          <span class="footer-growth-note">Free and MIT-licensed. If it helped you, a star helps others find it.</span>
+        </p>
       </footer>
     </div>
 
@@ -425,6 +458,7 @@
         milestones,
         nextMilestone,
       } from "./src/video-library-state.js";
+      import { initStarButtons, initShareTriggers, maybeStarNudge, REPO_URL } from "./src/growth.js?v=20261105-en";
 
       const state = { query: "", phase: "", diff: "", format: "", topPick: false, watch: "" };
       const validIds = new Set(videoLibrary.items.map((item) => item.id));
@@ -549,6 +583,8 @@
         const visible = videoLibrary.items.filter(matches);
         countLine.innerHTML = `Showing <strong>${visible.length}</strong> / ${videoLibrary.count}`;
         renderHud();
+        // Soft star invitation at 5 and 20 watched: shown once, dismissable, never required.
+        maybeStarNudge(watchedCount(save));
         if (!visible.length) {
           container.innerHTML = '<div class="empty pixel-panel">Nothing matches. Try another search?</div>';
           return;
@@ -647,28 +683,172 @@
         }
       });
 
-      // Share: use the system share sheet where there is one (mobile); otherwise
-      // copy the link to the clipboard and say so.
-      const shareBtn = document.getElementById("share-button");
-      shareBtn.addEventListener("click", async () => {
-        const data = {
-          title: document.title,
-          text: `Video library for From a Sine Wave to Whisper: ${videoLibrary.count} English lectures mapped to lessons L01–L99.`,
-          url: location.href,
-        };
+      // Share panel (top bar + footer) and star buttons: see src/growth.js.
+      initShareTriggers("videos");
+      initStarButtons();
+
+      // Progress card: draws N/total, streak and medals onto a 1080x1350 canvas in
+      // the page's pixel style and downloads it as a PNG (made for story-sized posts).
+      // Everything is drawn locally; the QR code is a file in the repo (og/qr-video-library.png).
+      const saveCardBtn = document.getElementById("save-card");
+      saveCardBtn.addEventListener("click", async () => {
+        const original = saveCardBtn.textContent;
+        saveCardBtn.textContent = "Drawing…";
+        saveCardBtn.disabled = true;
         try {
-          if (navigator.share) {
-            await navigator.share(data);
-            return;
-          }
-          await navigator.clipboard.writeText(data.url);
-          const original = shareBtn.textContent;
-          shareBtn.textContent = "✓ Link copied";
-          setTimeout(() => (shareBtn.textContent = original), 2000);
+          const blob = await renderProgressCard();
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = `sine-to-whisper-progress-${watchedCount(save)}-of-${videoLibrary.count}.png`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+          saveCardBtn.textContent = "✓ Saved";
         } catch {
-          /* the user cancelled the share sheet, or the clipboard is blocked: stay quiet */
+          saveCardBtn.textContent = "Could not draw";
+        } finally {
+          saveCardBtn.disabled = false;
+          setTimeout(() => (saveCardBtn.textContent = original), 2000);
         }
       });
+
+      function loadImage(src) {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve(img);
+          img.onerror = () => resolve(null); // the card still renders without the QR
+          img.src = src;
+        });
+      }
+
+      async function renderProgressCard() {
+        const W = 1080;
+        const H = 1350;
+        const canvas = document.createElement("canvas");
+        canvas.width = W;
+        canvas.height = H;
+        const ctx = canvas.getContext("2d");
+        const mono = '700 36px "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace';
+        const count = watchedCount(save);
+        const total = videoLibrary.count;
+        const streak = streakDays(save);
+        const medalList = milestones(total);
+        const qr = await loadImage("./og/qr-video-library.png");
+
+        // Background + scanlines
+        ctx.fillStyle = "#060b18";
+        ctx.fillRect(0, 0, W, H);
+        const glow = ctx.createRadialGradient(260, 160, 10, 260, 160, 700);
+        glow.addColorStop(0, "rgba(102, 232, 255, 0.18)");
+        glow.addColorStop(1, "rgba(102, 232, 255, 0)");
+        ctx.fillStyle = glow;
+        ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.035)";
+        for (let y = 0; y < H; y += 4) ctx.fillRect(0, y, W, 1);
+
+        // Panel
+        const panel = (x, y, w, h, stroke = "rgba(140, 197, 255, 0.5)") => {
+          ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+          ctx.fillRect(x + 12, y + 12, w, h);
+          ctx.fillStyle = "#0b1428";
+          ctx.fillRect(x, y, w, h);
+          ctx.lineWidth = 6;
+          ctx.strokeStyle = stroke;
+          ctx.strokeRect(x + 3, y + 3, w - 6, h - 6);
+        };
+        panel(60, 60, W - 120, H - 120);
+
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#b8fbff";
+        ctx.font = mono;
+        ctx.fillText("SINE TO WHISPER", 110, 110);
+        ctx.fillStyle = "#9fb4cb";
+        ctx.font = '400 28px "IBM Plex Mono", Consolas, monospace';
+        ctx.fillText("VIDEO LIBRARY  ·  PROGRESS CARD", 110, 160);
+
+        // Big number
+        ctx.fillStyle = "#ffc85e";
+        ctx.font = '700 180px "IBM Plex Mono", Consolas, monospace';
+        ctx.fillText(String(count), 110, 225);
+        const numWidth = ctx.measureText(String(count)).width;
+        ctx.fillStyle = "#9fb4cb";
+        ctx.font = '400 44px "IBM Plex Mono", Consolas, monospace';
+        ctx.fillText(`/ ${total} lectures watched`, 110 + numWidth + 24, 335);
+
+        // XP-style bar
+        const bx = 110;
+        const by = 425;
+        const bw = W - 220;
+        const bh = 44;
+        ctx.fillStyle = "#070d1d";
+        ctx.fillRect(bx, by, bw, bh);
+        ctx.strokeStyle = "rgba(140, 197, 255, 0.5)";
+        ctx.lineWidth = 4;
+        ctx.strokeRect(bx + 2, by + 2, bw - 4, bh - 4);
+        const fillW = Math.round((bw - 16) * (count / total));
+        const grad = ctx.createLinearGradient(bx, 0, bx + bw, 0);
+        grad.addColorStop(0, "#66e8ff");
+        grad.addColorStop(1, "#ffc85e");
+        ctx.fillStyle = grad;
+        ctx.fillRect(bx + 8, by + 8, fillW, bh - 16);
+        ctx.fillStyle = "rgba(4, 7, 14, 0.55)";
+        for (let x = bx + 8; x + 16 <= bx + 8 + fillW; x += 16) ctx.fillRect(x + 12, by + 8, 4, bh - 16);
+
+        // Lecture grid: one cell per lecture, green when watched
+        const cols = 14;
+        const cell = 50;
+        const gap = 10;
+        const gx = 110;
+        const gy = 505;
+        videoLibrary.items.forEach((item, i) => {
+          const x = gx + (i % cols) * (cell + gap);
+          const y = gy + Math.floor(i / cols) * (cell + gap);
+          ctx.fillStyle = save.watched[item.id] ? "#8ff3a5" : "#0f1b33";
+          ctx.fillRect(x, y, cell, cell);
+          ctx.strokeStyle = save.watched[item.id] ? "#8ff3a5" : "rgba(140, 197, 255, 0.35)";
+          ctx.lineWidth = 3;
+          ctx.strokeRect(x + 1.5, y + 1.5, cell - 3, cell - 3);
+        });
+        const rows = Math.ceil(total / cols);
+        let y = gy + rows * (cell + gap) + 20;
+
+        // Streak + medals
+        ctx.fillStyle = "#edf7ff";
+        ctx.font = '400 34px "IBM Plex Mono", Consolas, monospace';
+        ctx.fillText(`Streak  ${streak} ${streak === 1 ? "day" : "days"}`, 110, y);
+        ctx.font = '400 44px system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif';
+        let mx = 110;
+        for (const m of medalList) {
+          ctx.globalAlpha = count >= m.at ? 1 : 0.25;
+          ctx.fillText(m.icon, mx, y + 56);
+          mx += 70;
+        }
+        ctx.globalAlpha = 1;
+        y += 140;
+
+        // Footer: course name, repo URL, QR
+        panel(110, H - 330, W - 220, 230, "rgba(255, 200, 94, 0.6)");
+        ctx.fillStyle = "#ffc85e";
+        ctx.font = '700 34px "IBM Plex Mono", Consolas, monospace';
+        ctx.fillText("From a Sine Wave to Whisper", 150, H - 290);
+        ctx.fillStyle = "#edf7ff";
+        ctx.font = '400 24px "IBM Plex Mono", Consolas, monospace';
+        ctx.fillText("A free, open audio-AI course.", 150, H - 236);
+        ctx.fillText("99 lessons, 83 lectures, MIT, no sign-up.", 150, H - 200);
+        ctx.fillStyle = "#66e8ff";
+        ctx.fillText(REPO_URL.replace("https://", ""), 150, H - 150);
+        if (qr) {
+          ctx.imageSmoothingEnabled = false;
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(W - 110 - 190, H - 330 + 20, 190, 190);
+          ctx.drawImage(qr, W - 110 - 180, H - 330 + 30, 170, 170);
+        }
+
+        return new Promise((resolve, reject) => {
+          canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("toBlob failed"))), "image/png");
+        });
+      }
 
       render();
     </script>

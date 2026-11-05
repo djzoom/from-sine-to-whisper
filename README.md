@@ -15,6 +15,9 @@ from it, fork it, teach with it, build on it.
 
 > **Status.** All 99 lessons are available in English.
 
+**If this course helped you, [star the repo](https://github.com/djzoom/from-sine-to-whisper/stargazers) so others find it.** It is free and stays free; a star is just a signpost.
+**Share:** the [Aurora Quest game](https://djzoom.github.io/from-sine-to-whisper/) and the [video library](https://djzoom.github.io/from-sine-to-whisper/video-library.html) are the two pages made for passing around; both have a share button with ready-made text.
+
 ## Getting started
 
 ```bash

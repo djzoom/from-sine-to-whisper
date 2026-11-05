@@ -849,6 +849,31 @@ button:disabled {
   margin: 0;
 }
 
+/* Star invitation under the footer links (the button itself is styled in growth.css) */
+.footer-growth {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 14px;
+  margin-top: 10px;
+}
+
+.footer-growth .pixel-btn {
+  font-size: 0.78rem;
+  padding: 6px 12px;
+}
+
+.footer-growth-note {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+/* The top-bar star button sits with the game buttons (growth.css colours it amber) */
+.topbar-actions .gr-star {
+  justify-content: center;
+}
+
 /* ---- Responsive: mobile tabs and the "About" page (hidden on desktop, see the
    media query below) ------------------------------------------------------------ */
 
@@ -965,6 +990,20 @@ button:disabled {
     font-size: 0.88rem;
   }
 
+  /* On a phone the star button shrinks to the icon + count (aria-label keeps the full name) */
+  .topbar-actions .gr-star {
+    gap: 2px;
+    padding: 6px 4px;
+  }
+
+  .topbar-actions .gr-star-word {
+    display: none;
+  }
+
+  .topbar-actions .gr-star-count {
+    padding-left: 3px;
+  }
+
   .xp-meter {
     display: none;
   }
@@ -976,12 +1015,16 @@ button:disabled {
 
   .topbar-actions {
     width: 100%;
+    gap: 6px;
   }
 
+  /* Five buttons share the row: grow from their natural width (not equal shares) so
+     "Sound: on" and the star count never wrap mid-label */
   .topbar-actions .pixel-btn {
-    flex: 1;
-    padding: 7px 4px;
-    font-size: 0.72rem;
+    flex: 1 1 auto;
+    padding: 7px 3px;
+    font-size: 0.68rem;
+    white-space: nowrap;
   }
 
   /* The battle fills the remaining height; blocks are tightened to fit one screen,

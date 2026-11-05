@@ -1,0 +1,291 @@
+/* Growth and sharing UI shared by the Quest and the Video Library: the star
+   button, the share dialog, the toast and the Stargazer loot card. Everything
+   is prefixed gr- and reads the colour variables each page already defines, so
+   it inherits that page's pixel style without touching its own rules. */
+
+.gr-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--amber);
+  border-color: rgba(255, 200, 94, 0.6);
+}
+
+.gr-star:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+  text-decoration: none;
+}
+
+.gr-star-count {
+  font-family: var(--mono);
+  font-weight: 700;
+  padding-left: 6px;
+  border-left: 1px solid rgba(255, 200, 94, 0.5);
+}
+
+.gr-star-count[hidden] {
+  display: none;
+}
+
+/* Dialog */
+.gr-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(2, 5, 12, 0.72);
+}
+
+.gr-panel {
+  width: min(520px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: 16px 18px 14px;
+  background: var(--panel);
+  border: 3px solid var(--line);
+  box-shadow:
+    0 0 0 3px var(--ink, #04070e),
+    8px 8px 0 rgba(0, 0, 0, 0.5);
+  font-family: var(--sans);
+}
+
+.gr-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.gr-title {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.gr-close {
+  font: inherit;
+  font-family: var(--mono);
+  color: var(--muted);
+  background: var(--panel-deep);
+  border: 2px solid var(--line);
+  padding: 3px 8px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.gr-close:hover,
+.gr-close:focus-visible {
+  color: var(--cyan-strong);
+  border-color: var(--cyan);
+}
+
+.gr-preview {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--panel-deep);
+  border: 2px solid var(--line);
+  border-left: 4px solid var(--cyan);
+  overflow-wrap: anywhere;
+}
+
+.gr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.gr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 7px 10px;
+  font: inherit;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text);
+  background: var(--panel-deep);
+  border: 2px solid var(--line);
+  box-shadow: 0 3px 0 var(--ink, #04070e);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 80ms ease;
+}
+
+.gr-btn:hover,
+.gr-btn:focus-visible {
+  color: var(--cyan-strong);
+  border-color: var(--cyan);
+  text-decoration: none;
+}
+
+.gr-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 var(--ink, #04070e);
+}
+
+.gr-btn-primary {
+  background: rgba(102, 232, 255, 0.14);
+  border-color: var(--cyan);
+}
+
+.gr-btn.gr-star,
+.gr-btn.gr-toast-star {
+  color: var(--amber);
+  background: rgba(255, 200, 94, 0.12);
+  border-color: var(--amber);
+}
+
+.gr-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gr-copy-row {
+  margin-top: 2px;
+}
+
+.gr-mastodon {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 2px dashed var(--line);
+}
+
+.gr-mastodon[hidden] {
+  display: none;
+}
+
+.gr-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.gr-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 7px 10px;
+  font: inherit;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text);
+  background: var(--panel-deep);
+  border: 2px solid var(--line);
+  outline: none;
+}
+
+.gr-input:focus {
+  border-color: var(--cyan);
+}
+
+.gr-note {
+  margin: 12px 0 0;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* Toast */
+.gr-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 40;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: min(560px, calc(100vw - 24px));
+  padding: 12px 14px;
+  background: var(--panel);
+  border: 3px solid var(--amber);
+  box-shadow:
+    0 0 0 3px var(--ink, #04070e),
+    6px 6px 0 rgba(0, 0, 0, 0.5);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text);
+  animation: gr-rise 240ms steps(6);
+}
+
+.gr-toast-text {
+  flex: 1 1 220px;
+}
+
+@keyframes gr-rise {
+  from {
+    transform: translate(-50%, 24px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Stargazer card (the Quest's loot panel): an optional side quest, never required */
+.gr-stargazer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--panel-deep);
+  border: 2px dashed rgba(255, 200, 94, 0.55);
+}
+
+.gr-stargazer[hidden] {
+  display: none;
+}
+
+.gr-stargazer h3 {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--amber);
+}
+
+.gr-stargazer p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.gr-stargazer .gr-star {
+  align-self: flex-start;
+}
+
+@media (max-width: 480px) {
+  .gr-star-long {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gr-toast {
+    animation: none;
+  }
+}

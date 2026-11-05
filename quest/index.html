@@ -12,7 +12,34 @@
     />
     <meta name="theme-color" content="#08111f" />
     <title>Aurora Quest | The course RPG</title>
+    <link rel="canonical" href="https://djzoom.github.io/from-sine-to-whisper/" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%23060b18'/%3E%3Cg fill='%2366e8ff'%3E%3Crect x='0' y='8' width='1' height='2'/%3E%3Crect x='1' y='6' width='1' height='2'/%3E%3Crect x='2' y='4' width='1' height='2'/%3E%3Crect x='3' y='3' width='1' height='2'/%3E%3Crect x='4' y='4' width='1' height='2'/%3E%3Crect x='5' y='6' width='1' height='2'/%3E%3Crect x='6' y='8' width='1' height='2'/%3E%3Crect x='7' y='10' width='1' height='2'/%3E%3Crect x='8' y='12' width='1' height='2'/%3E%3Crect x='9' y='13' width='1' height='2'/%3E%3Crect x='10' y='12' width='1' height='2'/%3E%3Crect x='11' y='10' width='1' height='2'/%3E%3Crect x='12' y='8' width='1' height='2'/%3E%3Crect x='13' y='6' width='1' height='2'/%3E%3Crect x='14' y='4' width='1' height='2'/%3E%3Crect x='15' y='3' width='1' height='2'/%3E%3C/g%3E%3Crect x='13' y='1' width='2' height='2' fill='%23ffc85e'/%3E%3C/svg%3E"
+    />
+    <!-- Social preview cards (absolute URLs: crawlers don't resolve relative ones) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="From a Sine Wave to Whisper" />
+    <meta property="og:title" content="Aurora Quest: a free audio-AI course, played as an 8-bit game" />
+    <meta
+      property="og:description"
+      content="Defeat seven black-box bosses and work through 99 free lessons, from a sine wave to Whisper. No sign-up, MIT license."
+    />
+    <meta property="og:url" content="https://djzoom.github.io/from-sine-to-whisper/" />
+    <meta property="og:image" content="https://djzoom.github.io/from-sine-to-whisper/og/quest.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Aurora Quest: pixel-art boss next to the course title and the repository URL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aurora Quest: a free audio-AI course, played as an 8-bit game" />
+    <meta
+      name="twitter:description"
+      content="Defeat seven black-box bosses and work through 99 free lessons, from a sine wave to Whisper. No sign-up, MIT license."
+    />
+    <meta name="twitter:image" content="https://djzoom.github.io/from-sine-to-whisper/og/quest.png" />
     <link rel="stylesheet" href="./styles.css?v=20261105-en" />
+    <link rel="stylesheet" href="./growth.css?v=20261105-en" />
   </head>
   <body data-tab="battle">
     <div class="page-shell">
@@ -34,6 +61,10 @@
           <button class="pixel-btn" id="resume-button" type="button">Continue</button>
           <button class="pixel-btn ghost" id="reset-button" type="button">Reset</button>
           <button class="pixel-btn ghost" id="mute-button" type="button" aria-pressed="true">Sound: on</button>
+          <a class="pixel-btn gr-star" data-star-button href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener" aria-label="Star the course repository on GitHub">
+            <span aria-hidden="true">⭐</span><span class="gr-star-word">Star<span class="gr-star-long"> on GitHub</span></span>
+            <span class="gr-star-count" data-star-count hidden></span>
+          </a>
         </div>
       </header>
 
@@ -84,6 +115,18 @@
         <div class="pixel-panel loot-panel">
           <h2 class="panel-title">Loot</h2>
           <div id="inventory-list" class="loot-grid"></div>
+          <!-- Optional side quest. The game never requires it and never checks whether a star was given. -->
+          <aside class="gr-stargazer" id="stargazer-offer" aria-label="Optional side quest: Stargazer">
+            <h3>Side quest: Stargazer (optional)</h3>
+            <p>
+              Open the course repository on GitHub and leave a star if you think it deserves one. It helps other people find
+              the course; the game never needs it and takes your word for it.
+            </p>
+            <a class="pixel-btn gr-star" id="stargazer-button" data-star-button href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener" aria-label="Star the course repository on GitHub">
+              <span aria-hidden="true">⭐</span> Star on GitHub
+              <span class="gr-star-count" data-star-count hidden></span>
+            </a>
+          </aside>
         </div>
       </section>
 
@@ -96,7 +139,14 @@
           <a href="https://github.com/djzoom/from-sine-to-whisper/tree/main/notebooks" target="_blank" rel="noopener">All 99 lessons</a> ·
           <a href="./video-library.html">Video library</a> ·
           <a href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener">GitHub</a> ·
-          <a href="#" class="share-action" id="share-link">Share this page</a>
+          <a href="#" class="share-action" id="share-link" data-share-page>Share this page</a>
+        </p>
+        <p class="footer-growth">
+          <a class="pixel-btn gr-star" data-star-button href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener" aria-label="Star the course repository on GitHub">
+            <span aria-hidden="true">⭐</span> Star on GitHub
+            <span class="gr-star-count" data-star-count hidden></span>
+          </a>
+          <span class="footer-growth-note">Free and MIT-licensed. If it helped you, a star helps others find it.</span>
         </p>
       </footer>
 
@@ -138,7 +188,11 @@
           <a class="pixel-btn" href="https://github.com/djzoom/from-sine-to-whisper/tree/main/notebooks" target="_blank" rel="noopener">All 99 lessons</a>
           <a class="pixel-btn" href="./video-library.html">Video library</a>
           <a class="pixel-btn" href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener">GitHub</a>
-          <button class="pixel-btn primary share-action" type="button">Share this page</button>
+          <button class="pixel-btn primary share-action" type="button" data-share-page>Share this page</button>
+          <a class="pixel-btn gr-star" data-star-button href="https://github.com/djzoom/from-sine-to-whisper" target="_blank" rel="noopener" aria-label="Star the course repository on GitHub">
+            <span aria-hidden="true">⭐</span> Star on GitHub
+            <span class="gr-star-count" data-star-count hidden></span>
+          </a>
         </div>
       </section>
 
@@ -162,31 +216,12 @@
         }
       });
 
-      // Share (shared by the footer link and the "About" button): use the system share sheet if there is one,
-      // otherwise copy the link and confirm in place.
-      for (const trigger of document.querySelectorAll(".share-action")) {
-        trigger.addEventListener("click", async (event) => {
-          event.preventDefault();
-          const link = event.currentTarget;
-          const data = {
-            title: document.title,
-            text: "Aurora Quest: a 99-lesson audio-AI course, played as an 8-bit adventure.",
-            url: location.href,
-          };
-          try {
-            if (navigator.share) {
-              await navigator.share(data);
-              return;
-            }
-            await navigator.clipboard.writeText(data.url);
-            const original = link.textContent;
-            link.textContent = "✓ Link copied";
-            setTimeout(() => (link.textContent = original), 2000);
-          } catch {
-            /* the user cancelled the share sheet, etc. — stay quiet */
-          }
-        });
-      }
+    </script>
+    <!-- Share panel + star buttons (footer link, "About" button, loot side quest): see src/growth.js -->
+    <script type="module">
+      import { initStarButtons, initShareTriggers } from "./src/growth.js?v=20261105-en";
+      initShareTriggers("quest");
+      initStarButtons();
     </script>
     <script type="module" src="./src/app.js?v=20261105-en"></script>
   </body>
