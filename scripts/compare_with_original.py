@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -22,9 +23,41 @@ import nbformat
 from nbclient import NotebookClient
 
 ROOT = Path(__file__).resolve().parents[1]
+# Files a lesson may write while it runs (figures, audio, arrays, weights).
+ARTIFACTS = (".png", ".jpg", ".jpeg", ".svg", ".pdf", ".gif", ".wav", ".flac", ".mp3",
+             ".npy", ".npz", ".pt", ".pth", ".pkl", ".csv")
+
+
+def _git(repo: Path, *args: str) -> str:
+    return subprocess.run(["git", "-C", str(repo), *args], capture_output=True, text=True).stdout
+
+
+def _artifact_state(repo: Path) -> set[str]:
+    out = _git(repo, "status", "--porcelain", "--untracked-files=all")
+    return {line[3:] for line in out.splitlines() if line[3:].lower().endswith(ARTIFACTS)}
+
+
+def _restore(repo: Path, before: set[str]) -> None:
+    """Undo artifacts a lesson run created or modified, leaving everything else alone."""
+    if not (repo / ".git").exists():
+        return
+    for rel in _artifact_state(repo) - before:
+        if _git(repo, "ls-files", "--", rel).strip():
+            _git(repo, "checkout", "--", rel)  # tracked file the run overwrote
+        else:
+            (repo / rel).unlink(missing_ok=True)  # new file the run created
 
 
 def signature(path: Path) -> list[tuple[int, str]]:
+    repo = Path(_git(path.parent, "rev-parse", "--show-toplevel").strip() or path.parent)
+    before = _artifact_state(repo)
+    try:
+        return _signature(path)
+    finally:
+        _restore(repo, before)
+
+
+def _signature(path: Path) -> list[tuple[int, str]]:
     nb = nbformat.read(path, as_version=4)
     os.environ.setdefault("MPLBACKEND", "Agg")
     # Never download large pretrained models just to compare behaviour: with the

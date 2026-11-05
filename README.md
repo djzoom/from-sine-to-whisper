@@ -13,7 +13,7 @@ The whole course is free and open source under the MIT license — no paywall, n
 "first lesson free", nothing to sign up for. It is meant as a public good: learn
 from it, fork it, teach with it, build on it.
 
-> **Status.** 31 of 99 lessons are available in English. The rest are being
+> **Status.** 53 of 99 lessons are available in English. The rest are being
 > translated from the [Chinese original](https://github.com/djzoom/AURORA); until
 > then each lesson below links to its Chinese version.
 
@@ -109,28 +109,28 @@ turning one knob at a time and watching the plots.
 
 | # | Lesson |
 |---|---|
-| L32 | NumPy for signals — `np.arange` / `linspace`, building a one-second 16 kHz time axis *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L32_numpy_signals.ipynb))* |
-| L33 | Generating a sine — `x[n] = A·sin(2πfn/sr)`, implemented and checked against `aurora.audio.sine` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L33_sine_wave.ipynb))* |
-| L34 | Nyquist and aliasing — what a 6 kHz sine becomes when sampled at 8 kHz *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L34_aliasing.ipynb))* |
-| L35 | Euler meets the FFT — what `e^{-2πikn/N}` is; visualizing twiddle factors *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L35_euler_fft.ipynb))* |
-| L36 | Window functions — spectral leakage from the rectangular window; Hann / Hamming / Blackman compared *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L36_windows.ipynb))* |
-| L37 | The brute-force DFT — `X[k] = Σ x[n] e^{-2πikn/N}`, an O(N²) double loop verified against NumPy *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L37_dft.ipynb))* |
-| L38 | The FFT butterfly — even/odd split, `E[k] + W^k·O[k]`, from O(N²) to O(N log N) *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L38_fft_butterfly.ipynb))* |
-| L39 | Writing the FFT from scratch — recursive Cooley–Tukey, error < 1e-10 vs `numpy.fft` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L39_fft_implement.ipynb))* |
-| L40 | Spectrum analysis in practice — magnitude and phase spectra, frequency resolution, a 440 Hz + 880 Hz mix *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L40_spectrum.ipynb))* |
-| L41 | The windowed-FFT pipeline — signal → window → FFT → magnitude spectrum, end to end *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L41_fft_full.ipynb))* |
-| L42 🎨 | The FFT drawn — butterfly diagram; spectra of a pure tone, a chord and noise *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L42_visual_fft.ipynb))* |
-| L43 | How the STFT works — putting timestamps on a spectrum; the time–frequency resolution trade-off *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L43_stft.ipynb))* |
-| L44 | Writing the STFT — framing + windowing + FFT, checked against `aurora.audio.stft` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L44_stft_implement.ipynb))* |
-| L45 | Making spectrograms — `magnitude_spectrogram`, `pcolormesh` heatmaps, reading a time–frequency plot *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L45_spectrogram.ipynb))* |
-| L46 | The mel scale — logarithmic pitch perception, mel = 2595·log₁₀(1 + f/700), triangular filters *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L46_mel.ipynb))* |
-| L47 | Writing the mel filterbank — `mel_filterbank` from formula to NumPy, checked against the library *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L47_mel_implement.ipynb))* |
-| L48 🎨 | Time–frequency plots compared — linear vs mel vs log-mel spectrograms *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L48_visual_stft.ipynb))* |
-| L49 | The DCT-II — why it decorrelates; a pure-NumPy replacement for `scipy.fft.dct` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L49_dct.ipynb))* |
-| L50 | The full MFCC pipeline — signal → STFT → mel → log → DCT, checking the shape at every step *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L50_mfcc.ipynb))* |
-| L51 | MFCCs on real audio — extracting features from a real WAV file, with librosa as the answer key *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L51_real_audio.ipynb))* |
-| L52 | Audio Core complete — wrapping up feature engineering, the unit tests all green, assembling the evidence *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L52_features_done.ipynb))* |
-| L53 🎨 | MFCCs illustrated — waveform → spectrogram → mel spectrogram → cepstral coefficients, layer by layer *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/5_audio_dsp/L53_visual_mfcc.ipynb))* |
+| [L32](notebooks/5_audio_dsp/L32_numpy_signals.ipynb) | NumPy for signals — `np.arange` / `linspace`, building a one-second 16 kHz time axis |
+| [L33](notebooks/5_audio_dsp/L33_sine_wave.ipynb) | Generating a sine — `x[n] = A·sin(2πfn/sr)`, implemented and checked against `aurora.audio.sine` |
+| [L34](notebooks/5_audio_dsp/L34_aliasing.ipynb) | Nyquist and aliasing — what a 6 kHz sine becomes when sampled at 8 kHz |
+| [L35](notebooks/5_audio_dsp/L35_euler_fft.ipynb) | Euler meets the FFT — what `e^{-2πikn/N}` is; visualizing twiddle factors |
+| [L36](notebooks/5_audio_dsp/L36_windows.ipynb) | Window functions — spectral leakage from the rectangular window; Hann / Hamming / Blackman compared |
+| [L37](notebooks/5_audio_dsp/L37_dft.ipynb) | The brute-force DFT — `X[k] = Σ x[n] e^{-2πikn/N}`, an O(N²) double loop verified against NumPy |
+| [L38](notebooks/5_audio_dsp/L38_fft_butterfly.ipynb) | The FFT butterfly — even/odd split, `E[k] + W^k·O[k]`, from O(N²) to O(N log N) |
+| [L39](notebooks/5_audio_dsp/L39_fft_implement.ipynb) | Writing the FFT from scratch — recursive Cooley–Tukey, error < 1e-10 vs `numpy.fft` |
+| [L40](notebooks/5_audio_dsp/L40_spectrum.ipynb) | Spectrum analysis in practice — magnitude and phase spectra, frequency resolution, a 440 Hz + 880 Hz mix |
+| [L41](notebooks/5_audio_dsp/L41_fft_full.ipynb) | The windowed-FFT pipeline — signal → window → FFT → magnitude spectrum, end to end |
+| [L42](notebooks/5_audio_dsp/L42_visual_fft.ipynb) 🎨 | The FFT drawn — butterfly diagram; spectra of a pure tone, a chord and noise |
+| [L43](notebooks/5_audio_dsp/L43_stft.ipynb) | How the STFT works — putting timestamps on a spectrum; the time–frequency resolution trade-off |
+| [L44](notebooks/5_audio_dsp/L44_stft_implement.ipynb) | Writing the STFT — framing + windowing + FFT, checked against `aurora.audio.stft` |
+| [L45](notebooks/5_audio_dsp/L45_spectrogram.ipynb) | Making spectrograms — `magnitude_spectrogram`, `pcolormesh` heatmaps, reading a time–frequency plot |
+| [L46](notebooks/5_audio_dsp/L46_mel.ipynb) | The mel scale — logarithmic pitch perception, mel = 2595·log₁₀(1 + f/700), triangular filters |
+| [L47](notebooks/5_audio_dsp/L47_mel_implement.ipynb) | Writing the mel filterbank — `mel_filterbank` from formula to NumPy, checked against the library |
+| [L48](notebooks/5_audio_dsp/L48_visual_stft.ipynb) 🎨 | Time–frequency plots compared — linear vs mel vs log-mel spectrograms |
+| [L49](notebooks/5_audio_dsp/L49_dct.ipynb) | The DCT-II — why it decorrelates; a pure-NumPy replacement for `scipy.fft.dct` |
+| [L50](notebooks/5_audio_dsp/L50_mfcc.ipynb) | The full MFCC pipeline — signal → STFT → mel → log → DCT, checking the shape at every step |
+| [L51](notebooks/5_audio_dsp/L51_real_audio.ipynb) | MFCCs on real audio — extracting features from a real WAV file, with librosa as the answer key |
+| [L52](notebooks/5_audio_dsp/L52_features_done.ipynb) | Audio Core complete — wrapping up feature engineering, the unit tests all green, assembling the evidence |
+| [L53](notebooks/5_audio_dsp/L53_visual_mfcc.ipynb) 🎨 | MFCCs illustrated — waveform → spectrogram → mel spectrogram → cepstral coefficients, layer by layer |
 
 ### 🧠 Phase 6 · Deep learning  `6_deep_learning/`  L54–L65
 
