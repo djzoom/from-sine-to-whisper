@@ -215,8 +215,9 @@ turning one knob at a time and watching the plots.
 
 ## About this edition
 
-This is the English edition of [AURORA](https://github.com/djzoom/AURORA), written
-in Chinese by Garfield Wang. It is adapted, not transliterated: examples and
+This is the English edition of [AURORA](https://github.com/djzoom/AURORA) —
+**A**udio **U**nderstanding, **R**easoning and **O**rchestration **R**esearch
+**A**rchitecture — written in Chinese by Garfield Wang. It is adapted, not transliterated: examples and
 references are chosen for English-speaking readers, and the recurring students
 who ask questions in later lessons are called Samuel, Ruth and Hannah. The maths,
 the code and the exercises are the same as in the original, and every lesson is
