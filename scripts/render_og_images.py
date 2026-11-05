@@ -163,7 +163,6 @@ def main() -> int:
     render(fill(QUEST_HTML, css=BASE_CSS, sprite=sprite_svg("blackbox"), repo=REPO), OUT / "quest.png")
     render(fill(VIDEOS_HTML, css=BASE_CSS, cells=video_cells(), repo=REPO), OUT / "videos.png")
     qr(SITE + "video-library.html", OUT / "qr-video-library.png")
-    qr(SITE, OUT / "qr-quest.png")
     return 0
 
 
