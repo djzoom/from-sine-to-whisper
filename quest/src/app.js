@@ -8,7 +8,13 @@
 // every state-changing action is blocked, so that when the delayed commitAnswer
 // runs, nobody has switched chapter, reset or loaded a save underneath it.
 
-import { QUESTS, XP_PER_QUESTION, XP_PER_PHASE_CLEAR } from "./data/quests.js";
+import {
+  QUESTS,
+  XP_PER_QUESTION,
+  XP_PER_PHASE_CLEAR,
+  XP_STARGAZER,
+  STARGAZER_ARTIFACT,
+} from "./data/quests.js";
 import { playSfx } from "./audio.js";
 import {
   defaultSave,
@@ -186,6 +192,24 @@ function commitAnswer(choiceIndex, question) {
   persist();
 }
 
+// ---- Optional side quest: Stargazer ------------------------------------------------
+
+// The loot-panel star button is a plain link to GitHub; it opens in a new tab as
+// usual. The click alone awards the artifact (once): we can't and don't want to
+// know whether a star was given.
+function claimStargazer() {
+  if (state.inventory.some((entry) => entry.name === STARGAZER_ARTIFACT.name)) return;
+  ensureInventory(state, STARGAZER_ARTIFACT);
+  state.xp += XP_STARGAZER;
+  addLog(
+    state,
+    "Side quest",
+    `Stargazer artifact earned for visiting the repository. +${XP_STARGAZER} XP. Starring is optional, always.`,
+  );
+  render();
+  persist();
+}
+
 // ---- Mute and keyboard --------------------------------------------------------
 
 function toggleMute() {
@@ -243,6 +267,7 @@ function wireEvents() {
   els.resetButton?.addEventListener("click", resetAdventure);
   els.muteButton?.addEventListener("click", toggleMute);
   els.nextButton?.addEventListener("click", advancePhase);
+  els.stargazerButton?.addEventListener("click", claimStargazer);
   window.addEventListener("keydown", handleKeydown);
 }
 

@@ -4,7 +4,7 @@
 //
 // handlers contract: { onChoice(index), onSelectPhase(phaseIndex) }
 
-import { QUESTS, XP_PER_LEVEL } from "./data/quests.js";
+import { QUESTS, XP_PER_LEVEL, STARGAZER_ARTIFACT } from "./data/quests.js";
 import { COURSE_INTRO, COURSE_PHASES } from "./data/worldmap.js?v=20261105-en";
 import { drawSprite, SPRITE_BY_QUEST } from "./sprites.js";
 import {
@@ -40,6 +40,8 @@ export const els = {
   battleLogList: document.getElementById("battle-log-list"),
   nextButton: document.getElementById("next-button"),
   inventoryList: document.getElementById("inventory-list"),
+  stargazerOffer: document.getElementById("stargazer-offer"),
+  stargazerButton: document.getElementById("stargazer-button"),
   roadmapList: document.getElementById("roadmap-list"),
   mapCaption: document.getElementById("map-caption"),
 };
@@ -315,6 +317,12 @@ function renderInventory(state) {
     card.appendChild(body);
     els.inventoryList.appendChild(card);
   });
+  // The Stargazer side quest card stays until the artifact is in the bag.
+  if (els.stargazerOffer) {
+    els.stargazerOffer.hidden = state.inventory.some(
+      (item) => item.name === STARGAZER_ARTIFACT.name,
+    );
+  }
 }
 
 function renderLog(state) {

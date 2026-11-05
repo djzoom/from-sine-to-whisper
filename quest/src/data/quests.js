@@ -10,6 +10,16 @@ export const XP_PER_QUESTION = 30;
 export const XP_PER_PHASE_CLEAR = 60;
 export const XP_PER_LEVEL = 120;
 
+// Optional side quest: opening the repository's GitHub page from the loot panel
+// awards this artifact once. Starring is the player's choice; the game never
+// checks it and nothing in the game depends on it.
+export const XP_STARGAZER = 30;
+export const STARGAZER_ARTIFACT = {
+  icon: "☆",
+  name: "Stargazer",
+  desc: "You visited the course repository on GitHub. Whether you left a star is your call.",
+};
+
 const q = (prompt, choices, answer, hint, note) => ({
   prompt,
   choices,
