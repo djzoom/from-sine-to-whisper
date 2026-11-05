@@ -13,7 +13,7 @@ The whole course is free and open source under the MIT license — no paywall, n
 "first lesson free", nothing to sign up for. It is meant as a public good: learn
 from it, fork it, teach with it, build on it.
 
-> **Status.** 53 of 99 lessons are available in English. The rest are being
+> **Status.** 75 of 99 lessons are available in English. The rest are being
 > translated from the [Chinese original](https://github.com/djzoom/AURORA); until
 > then each lesson below links to its Chinese version.
 
@@ -136,33 +136,33 @@ turning one knob at a time and watching the plots.
 
 | # | Lesson |
 |---|---|
-| L54 | A `Value` computation graph — scalar autodiff: forward values and backward gradients, hand-written add / mul nodes *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L54_value_autograd.ipynb))* |
-| L55 | Completing the operators — `__pow__`, ReLU, tanh, exp nodes; the full computation graph *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L55_forward_pass.ipynb))* |
-| L56 | Backpropagation by hand — the chain rule layer by layer: gradient = local gradient × upstream gradient *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L56_backward_pass.ipynb))* |
-| L57 | An MLP from scratch — fully connected layers, activations, the complete forward and backward pass *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L57_mlp.ipynb))* |
-| L58 | The training loop — loss, `optimizer.step`, convergence curves, fitting `make_moons` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L58_training_loop.ipynb))* |
-| L59 | PyTorch tensors — converting to and from NumPy, devices, `requires_grad` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L59_tensor_basics.ipynb))* |
-| L60 | How autograd works — `grad_fn` graphs, `backward()`, `retain_graph` *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L60_pytorch_autograd.ipynb))* |
-| L61 | `nn.Module` in practice — Linear / ReLU / Sequential, managing parameters, saving models *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L61_pytorch_nn.ipynb))* |
-| L62 | `Dataset` and `DataLoader` — a custom `__getitem__`, batching audio data *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L62_kws_dataset.ipynb))* |
-| L63 | An audio classifier — CNN on mel features, defining the network for Speech Commands *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L63_kws_model.ipynb))* |
-| L64 | Training and evaluation — train loop + validation loop, accuracy, confusion matrix, diagnosing overfitting *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L64_kws_train_eval.ipynb))* |
-| L65 🎨 | Training visualized — loss / accuracy curves, gradient norms, weight histograms *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/6_deep_learning/L65_visual_training.ipynb))* |
+| [L54](notebooks/6_deep_learning/L54_value_autograd.ipynb) | A `Value` computation graph — scalar autodiff: forward values and backward gradients, hand-written add / mul nodes |
+| [L55](notebooks/6_deep_learning/L55_forward_pass.ipynb) | Completing the operators — `__pow__`, ReLU, tanh, exp nodes; the full computation graph |
+| [L56](notebooks/6_deep_learning/L56_backward_pass.ipynb) | Backpropagation by hand — the chain rule layer by layer: gradient = local gradient × upstream gradient |
+| [L57](notebooks/6_deep_learning/L57_mlp.ipynb) | An MLP from scratch — fully connected layers, activations, the complete forward and backward pass |
+| [L58](notebooks/6_deep_learning/L58_training_loop.ipynb) | The training loop — loss, `optimizer.step`, convergence curves, fitting `make_moons` |
+| [L59](notebooks/6_deep_learning/L59_tensor_basics.ipynb) | PyTorch tensors — converting to and from NumPy, devices, `requires_grad` |
+| [L60](notebooks/6_deep_learning/L60_pytorch_autograd.ipynb) | How autograd works — `grad_fn` graphs, `backward()`, `retain_graph` |
+| [L61](notebooks/6_deep_learning/L61_pytorch_nn.ipynb) | `nn.Module` in practice — Linear / ReLU / Sequential, managing parameters, saving models |
+| [L62](notebooks/6_deep_learning/L62_kws_dataset.ipynb) | `Dataset` and `DataLoader` — a custom `__getitem__`, batching audio data |
+| [L63](notebooks/6_deep_learning/L63_kws_model.ipynb) | An audio classifier — CNN on mel features, defining the network for Speech Commands |
+| [L64](notebooks/6_deep_learning/L64_kws_train_eval.ipynb) | Training and evaluation — train loop + validation loop, accuracy, confusion matrix, diagnosing overfitting |
+| [L65](notebooks/6_deep_learning/L65_visual_training.ipynb) 🎨 | Training visualized — loss / accuracy curves, gradient norms, weight histograms |
 
 ### 🎙️ Phase 7 · Speech recognition  `7_asr/`  L66–L75
 
 | # | Lesson |
 |---|---|
-| L66 | ASR end to end — acoustic model → language model → decoder; end-to-end vs classical pipelines *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L66_asr_overview.ipynb))* |
-| L67 | Edit distance from scratch — Levenshtein dynamic programming, the maths of WER *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L67_edit_distance.ipynb))* |
-| L68 | How CTC alignment works — the blank symbol, monotonic paths and label collapsing *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L68_ctc_alignment.ipynb))* |
-| L69 | The CTC forward algorithm — summing over all paths, O(T×2L) in pure NumPy *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L69_ctc_forward.ipynb))* |
-| L70 | Inside Whisper — log-mel input, Transformer encoder–decoder, multitask heads *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L70_whisper_arch.ipynb))* |
-| L71 | Whisper decoding — greedy decoding and beam search, from principle to implementation *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L71_whisper_decoding.ipynb))* |
-| L72 | Fine-tuning Whisper — LoRA low-rank adapters vs full fine-tuning, adapting to Chinese / dialect data *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L72_whisper_finetune.ipynb))* |
-| L73 | Evaluating with WER — insertions / deletions / substitutions, sentence-level analysis compared with jiwer *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L73_wer_eval.ipynb))* |
-| L74 | ASR error analysis — substitution / deletion / insertion patterns, from a WER number to what to fix *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L74_asr_error_analysis.ipynb))* |
-| L75 🎨 | The ASR pipeline drawn — waveform → spectrogram → tokens → text *(coming soon — [Chinese original](https://github.com/djzoom/AURORA/blob/main/notebooks/7_asr/L75_visual_asr.ipynb))* |
+| [L66](notebooks/7_asr/L66_asr_overview.ipynb) | ASR end to end — acoustic model → language model → decoder; end-to-end vs classical pipelines |
+| [L67](notebooks/7_asr/L67_edit_distance.ipynb) | Edit distance from scratch — Levenshtein dynamic programming, the maths of WER |
+| [L68](notebooks/7_asr/L68_ctc_alignment.ipynb) | How CTC alignment works — the blank symbol, monotonic paths and label collapsing |
+| [L69](notebooks/7_asr/L69_ctc_forward.ipynb) | The CTC forward algorithm — summing over all paths, O(T×2L) in pure NumPy |
+| [L70](notebooks/7_asr/L70_whisper_arch.ipynb) | Inside Whisper — log-mel input, Transformer encoder–decoder, multitask heads |
+| [L71](notebooks/7_asr/L71_whisper_decoding.ipynb) | Whisper decoding — greedy decoding and beam search, from principle to implementation |
+| [L72](notebooks/7_asr/L72_whisper_finetune.ipynb) | Fine-tuning Whisper — LoRA low-rank adapters vs full fine-tuning, adapting to a low-resource language (Welsh) |
+| [L73](notebooks/7_asr/L73_wer_eval.ipynb) | Evaluating with WER — insertions / deletions / substitutions, sentence-level analysis compared with jiwer |
+| [L74](notebooks/7_asr/L74_asr_error_analysis.ipynb) | ASR error analysis — substitution / deletion / insertion patterns, from a WER number to what to fix |
+| [L75](notebooks/7_asr/L75_visual_asr.ipynb) 🎨 | The ASR pipeline drawn — waveform → spectrogram → tokens → text |
 
 ### 🎵 Phase 8 · Music understanding  `8_music/`  L76–L82
 
