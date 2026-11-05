@@ -2,12 +2,12 @@
 
 > ⚠️ Finish the exercises on your own first, then look at the reference implementation.
 
-This lesson uses mock functions to demonstrate the mic → ASR → RAG → LLM integration pattern, so it runs end to end without a GPU or any external model. The exercises sit in two places: the parameter experiment in Section 5 (`n_trials`) and the thought question in Section 6.
+This lesson uses mock functions to demonstrate the mic → ASR → RAG → LLM integration pattern, so it runs end to end without a GPU or any external model. The exercises sit in two places: the "Parameter experiment" after Section 4 (`n_trials`) and the thought question in Section 6.
 
-## Reference implementation 1 — Section 5 parameter experiment: change `n_trials` to 5
+## Reference implementation 1 — the "Parameter experiment" (after Section 4): `n_trials = 5`
 
 ```python
-# ✏️ TODO was n_trials = 3; change it to 5 to watch how each stage's duration fluctuates
+# the notebook defaults to n_trials = 5; raise or lower it to watch how each stage's duration fluctuates
 n_trials = 5
 all_timings = []
 
